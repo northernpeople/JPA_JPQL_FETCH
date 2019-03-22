@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 
+import com.example.stepan.jpql.address.Address;
 import com.example.stepan.jpql.car.Car;
 
 import lombok.Getter;
@@ -34,6 +35,9 @@ public class User {
 	// unidirectional one to many
 	@OneToMany
 	Set<Car> ownedCars = new HashSet<>();
+
+	@OneToMany
+	Set<Address> addresses = new HashSet<>();
 
 	
 	@PrePersist
